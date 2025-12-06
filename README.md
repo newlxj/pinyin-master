@@ -1,20 +1,17 @@
+
+这就是一个练拼音的，自己可以导入自己的字库内容进行练习，有打字和游戏两种练习模式，打字模式可以自己设置速度和错误率，游戏模式可以自己设置游戏时间和游戏难度。
+
+对你有用给个赞，谢谢！
+
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+<img  alt="GHBanner" src="img1.png" />
+<img  alt="GHBanner" src="img2.png" />
 </div>
 
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1TC2P1uzHHzEHPg50B65zdH9pdNFsEMSM
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
+可以直接下载打包好的或者自己编译
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+2. Run or build the app:
+   `npm run dev`  or  `npm run build`
+3. go build -o pinyin
