@@ -3,11 +3,9 @@
 
 对你有用给个赞，谢谢！
 
-<div align="center">
-<img  alt="GHBanner" src="img1.png" />
-<img  alt="GHBanner" src="img2.png" />
-</div>
 
+![img1](img1.png "img1")
+![img2](img2.png "img2")
 可以直接下载打包好的或者自己编译
 
 1. Install dependencies:
