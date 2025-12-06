@@ -13,6 +13,7 @@ import (
 )
 
 // 1. 将 dist 目录下的所有文件嵌入到二进制文件中
+//
 //go:embed dist/*
 var content embed.FS
 
@@ -26,14 +27,14 @@ func main() {
 
 	// 3. 设置文件服务器
 	http.Handle("/", http.FileServer(http.FS(distFS)))
-
+	port := 8877
 	// 4. 寻找一个空闲端口，或者指定端口（这里使用随机空闲端口，避免冲突）
-	listener, err := net.Listen("tcp", ":0")
+	listener, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
 	if err != nil {
 		log.Fatal("无法启动监听:", err)
 	}
 
-	port := listener.Addr().(*net.TCPAddr).Port
+	// port := listener.Addr().(*net.TCPAddr).Port
 	url := fmt.Sprintf("http://localhost:%d", port)
 
 	fmt.Printf("服务已启动: %s\n", url)

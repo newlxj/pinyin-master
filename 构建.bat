@@ -12,7 +12,7 @@ if %errorlevel% neq 0 (
     pause
     exit /b 1
 )
- 
+npm install --save-dev @types/node
 echo.
 echo [4/4] ����GoӦ��...
 go mod tidy
