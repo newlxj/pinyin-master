@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+   Offline Font Strategy:
+   Use system fonts instead of downloading web fonts.
+   - Body: SimSun (宋体)
+   - Display: Microsoft YaHei (微软雅黑)
+*/
+
+body {
+  font-family: "SimSun", "STSong", "Songti SC", serif;
+  background-color: #0a0a12;
+  color: #e2e8f0;
+  overflow: hidden;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Text Shadow */
+.text-shadow-neon {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.text-shadow-lg {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Mask for fade effect */
+.mask-linear-fade {
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}

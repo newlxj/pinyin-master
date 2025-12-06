@@ -12,7 +12,15 @@ const App: React.FC = () => {
   const [mode, setMode] = useState<AppMode>(AppMode.PRACTICE);
   const [showImport, setShowImport] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [showPinyin, setShowPinyin] = useState(true);
+  
+  // Preferences with Persistence
+  const [showPinyin, setShowPinyin] = useState(() => {
+    return localStorage.getItem('pref_showPinyin') !== 'false'; // Default true
+  });
+  
+  const [enableTTS, setEnableTTS] = useState(() => {
+    return localStorage.getItem('pref_enableTTS') !== 'false'; // Default true
+  });
   
   // Data State
   const [rawText, setRawText] = useState(() => {
@@ -31,6 +39,15 @@ const App: React.FC = () => {
       gameDuration: 120
     };
   });
+
+  // Persist Preferences
+  useEffect(() => {
+    localStorage.setItem('pref_showPinyin', String(showPinyin));
+  }, [showPinyin]);
+
+  useEffect(() => {
+    localStorage.setItem('pref_enableTTS', String(enableTTS));
+  }, [enableTTS]);
 
   // Parse text into CharItems (Char + Pinyin + DisplayPinyin)
   useEffect(() => {
@@ -110,6 +127,8 @@ const App: React.FC = () => {
             charList={charList} 
             showPinyin={showPinyin}
             togglePinyin={() => setShowPinyin(!showPinyin)}
+            enableTTS={enableTTS}
+            toggleTTS={() => setEnableTTS(!enableTTS)}
           />
         ) : (
           <GameMode 
