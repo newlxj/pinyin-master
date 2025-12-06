@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>刘开怡练字机</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neon: {
+                blue: '#00f3ff',
+                pink: '#ff00ff',
+                green: '#00ff99',
+                dark: '#0a0a12',
+                surface: '#161622',
+              }
+            },
+            animation: {
+              'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'explode': 'explode 0.5s ease-out forwards',
+            },
+            keyframes: {
+              explode: {
+                '0%': { transform: 'scale(1)', opacity: '1' },
+                '50%': { transform: 'scale(1.5)', opacity: '0.8' },
+                '100%': { transform: 'scale(2)', opacity: '0' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&family=Noto+Sans+SC:wght@400;700&display=swap');
+      body {
+        font-family: 'Noto Sans SC', sans-serif;
+        background-color: #0a0a12;
+        color: #e2e8f0;
+        overflow: hidden; /* Prevent body scroll, handle in app */
+      }
+      .font-display {
+        font-family: 'ZCOOL QingKe HuangYou', cursive;
+      }
+      /* Hide scrollbar for clean UI */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "pinyin-pro": "https://aistudiocdn.com/pinyin-pro@^3.27.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
